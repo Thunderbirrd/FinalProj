@@ -1,6 +1,7 @@
 package com.example.base.models;
 
-public class Admin extends Person{
+public class User extends Person{
+    private int id;
     private String login;
     private String password;
 }
