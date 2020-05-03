@@ -3,15 +3,19 @@ package com.example.base.services;
 
 import com.example.base.models.User;
 import com.example.base.repos.UserRepo;
-import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 
 @Service
-@RequiredArgsConstructor
 public class UserService {
-    private final UserRepo userRepo;
 
+    @Autowired
+    private UserRepo userRepo;
+
+    @Transactional(readOnly = true)
     public User getUser(Integer id){
-        return userRepo.findById(id).get();
+        return userRepo.findById(id).orElse(null);
     }
 }

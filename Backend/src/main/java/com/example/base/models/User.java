@@ -1,8 +1,6 @@
 package com.example.base.models;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
@@ -11,14 +9,12 @@ import javax.persistence.*;
 @Setter
 @Entity
 @Table(name = "User")
-@NoArgsConstructor
-@AllArgsConstructor
 public class User{
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-    @Column
+    @Column(name = "login")
     private String login;
-    @Column
+    @Column(name = "password")
     private String password;
 }

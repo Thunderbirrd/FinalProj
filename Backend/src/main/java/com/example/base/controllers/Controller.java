@@ -2,18 +2,22 @@ package com.example.base.controllers;
 
 import com.example.base.models.User;
 import com.example.base.services.UserService;
-import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequiredArgsConstructor
 public class Controller{
 
-    private final UserService userService;
+    @RequestMapping("/")
+    public String home(){
+        return "Hello World!";
+    }
 
-    @GetMapping("/getUser/{id}")
+    @Autowired
+    private UserService userService;
+
+    @RequestMapping(value = "/getUser/{id}", method = RequestMethod.GET)
+    @ResponseBody
     public User getUser(@PathVariable Integer id){
         return userService.getUser(id);
     }
