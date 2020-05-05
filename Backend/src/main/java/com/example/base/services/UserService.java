@@ -14,7 +14,7 @@ public class UserService {
     @Autowired
     private UserRepo userRepo;
 
-    @Transactional(readOnly = true)
+    @Transactional
     public User getUser(Integer id){
         return userRepo.findById(id).orElse(null);
     }

@@ -16,8 +16,7 @@ public class Controller{
     @Autowired
     private UserService userService;
 
-    @RequestMapping(value = "/getUser/{id}", method = RequestMethod.GET)
-    @ResponseBody
+    @GetMapping("/getUser/{id}")
     public User getUser(@PathVariable Integer id){
         return userService.getUser(id);
     }
