@@ -14,8 +14,19 @@ public class UserService {
     @Autowired
     private UserRepo userRepo;
 
-    @Transactional
+    @Transactional(readOnly = true)
     public User getUser(Integer id){
         return userRepo.findById(id).orElse(null);
+    }
+
+    @Transactional
+    public User saveUser(User user){
+        userRepo.save(user);
+        return userRepo.findById(user.getId()).orElse(null);
+    }
+
+    @Transactional
+    public User findUserByLogin(String login){
+        return userRepo.findUserByLogin(login);
     }
 }

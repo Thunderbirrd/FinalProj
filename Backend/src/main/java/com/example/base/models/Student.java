@@ -18,10 +18,12 @@ public class Student {
     private Integer id;
     @Column(name = "birthDate")
     private String birthDate;
+    /*
     @Column(name = "group")
     private Group group;
     @Column(name = "examsMarks")
     private JSONObject examsMarks = new JSONObject();
+*/
     @Column(name = "name")
     private String name;
     @Column(name = "surname")
