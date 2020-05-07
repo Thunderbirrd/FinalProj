@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-// Сервеис - подушка между репозиторием и контроллером
+// Сервис - подушка между репозиторием и контроллером
 
 @Service
 public class UserService {
