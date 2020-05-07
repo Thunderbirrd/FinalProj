@@ -1,7 +1,6 @@
 package com.example.base.models;
 
 import lombok.*;
-import org.json.JSONObject;
 
 import javax.persistence.*;
 
@@ -9,7 +8,7 @@ import javax.persistence.*;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
+@Entity // аннотация говорит, что это таблица в БД
 @Table(name = "students", schema = "public")
 public class Student {
     @Id
@@ -23,7 +22,7 @@ public class Student {
     private Group group;
     @Column(name = "examsMarks")
     private JSONObject examsMarks = new JSONObject();
-*/
+    */
     @Column(name = "name")
     private String name;
     @Column(name = "surname")
